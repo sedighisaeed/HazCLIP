@@ -50,8 +50,9 @@ Efficiency: 300,804 trainable params (0.198%) · ≤7 CPU-minutes training ·
 │   ├── real_haze_pairs_hazclip.json
 │   ├── stat_tests.json        # Wilcoxon + McNemar outputs
 │   └── ...
-├── paper/                 # IEEEtran source (main.tex + refs.bib)
-└── EXPERIMENTS_LOG.md     # §1–18: every experiment, verbatim numbers
+└── EXPERIMENTS_LOG.md     # par. 1-18: every experiment, verbatim numbers
+
+> **Note:** the manuscript itself is not distributed here while under review; this repository provides code, per-run results, and figures.
 ```
 
 ## Quick start
