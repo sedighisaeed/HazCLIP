@@ -372,7 +372,7 @@ DINOv2-small & 1.000 & 0.910 & 0.733 & 0.498 & 50.2\% \\
 \end{table*}
 \subsection{Main Results on Synthetic Severity Curves}
 Table II reports before/after HazCLIP (v0, CIFAR bank, 3-seed mean$\pm$std).
-\begin{table}[!t]
+\begin{table*}[!t]
 \caption{Hazy$\rightarrow$clean (P1), before $\rightarrow$ after HazCLIP. Bold marks the adapted system; clean performance is preserved (mAP even improves, +0.040).}
 \label{tab:hazycleanp1bef}
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
@@ -384,7 +384,7 @@ moderate & 0.817 & \textbf{0.994 $\pm$ 0.003} & 0.471 & \textbf{0.637 $\pm$ 0.00
 heavy & 0.582 & \textbf{0.936 $\pm$ 0.003} & 0.348 & \textbf{0.591 $\pm$ 0.005} \\
 extreme & 0.353 & \textbf{0.814 $\pm$ 0.008} & 0.225 & \textbf{0.515 $\pm$ 0.006} \\
 \bottomrule\end{tabular}
-\end{table}
+\end{table*}
 HazCLIP recovers \textbf{73\%} of the haze-induced R@1 loss (extreme relative
 drop 64.7\%$\rightarrow$17.6\%) with a seed variance of $\leq$0.008 --- the gap to the frozen
 backbone is $\approx$60$\sigma$, i.e. unambiguous without further testing. Variants
