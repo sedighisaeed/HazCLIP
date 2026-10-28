@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "HazCLIP: Physics-Guided Adaptation of Vision-Language Models for Haze-Robust Image Retrieval"
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Hosseini
+    given-names: Ali
+    email: ali.hosseini7148@iau.ac.ir
+    affiliation: "Islamic Azad University, Shiraz"
+  - family-names: Sedighi
+    given-names: Saeed
+    email: saeed.sedighi@iau.ac.ir
+    affiliation: "Islamic Azad University, Shiraz"
+date-released: "2026-10-28"
+license: MIT

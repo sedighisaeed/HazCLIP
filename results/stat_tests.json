@@ -1,0 +1,19 @@
+{
+ "n_pairs": 1623,
+ "wilcoxon_recip_rank": {
+  "W": 40510.0,
+  "z": 14.221590426875737,
+  "p_two_sided": 0.0,
+  "n_nonzero": 292,
+  "note": "HazCLIP minus raw CLIP; positive z favors HazCLIP"
+ },
+ "mcnemar_R@1": {
+  "b_raw_only_hits": 1,
+  "c_haz_only_hits": 195,
+  "p_exact_two_sided": 3.922988831163664e-57
+ },
+ "mean_recip_rank": {
+  "raw": 0.8575306122399166,
+  "hazclip": 0.9526037739681128
+ }
+}
