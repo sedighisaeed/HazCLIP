@@ -166,3 +166,34 @@ Full protocol doc: 03_Data/real_haze/PROTOCOL.md | Script: 04_Code/eval_real_haz
 - Files: `05_Experiments/real_haze_pairs/real_haze_pairs_{raw_clip,hazclip}.json` (with per_query ranks+recip_rank), `stat_tests.json`
 - NOTE: §17 pilot numbers (500 pairs, gallery 500) were R@1 0.888/0.972; the paper reports THIS section (n=1623, gallery 1623). Pilot JSONs overwritten by full runs.
 - Paper edit: Section 4 real-haze subsection + fig5 must use 0.811/0.930.
+
+---
+
+## Review-Response Experiments (2026-10-29)
+
+### 1. Harmonized self-excluded evaluation (`05_Experiments/harmonized_eval/`)
+All systems re-evaluated on an identical split (n=600, class-level relevance,
+fixed shared depth realizations, **query source image excluded from gallery**).
+Results in `results/harmonized.json` (+ `harmonized.md`):
+- P1 (hazy→clean, self-excluded): CLIP 0.838→0.320 (-61.8%), SigLIP 0.900→0.330 (-63.3%),
+  DINOv2 0.922→0.452 (-51.0%), HazCLIP v0 extreme R@1 0.660.
+- **P2 (hazy→same-severity, self-excluded): extreme 0.423 — no longer 1.000.**
+  The earlier P2=1.000 claim was an identity-matching artifact; the revised
+  diagnosis keeps cross-domain misalignment as the driver (P2>P1 at every severity)
+  without the circularity flagged by the reviewer.
+- Prompt-bank zero-shot probes: raw 0.455 → adapted 0.658 at extreme severity
+  (weather sensitivity confirmed; new Table in Sec. IV-F).
+- Ablations (InfoNCE-only, w/o L_phys, w/o L_inv) re-run on the same split.
+
+### 2. DCP→CLIP on all 1,623 real-haze pairs
+`05_Experiments/real_haze_pairs/real_haze_pairs_dcp_clip.json`:
+R@1=0.306, R@10=0.629, MRR=0.417 — a collapse relative to raw CLIP (0.811)
+and HazCLIP v0 (0.930). Table V now includes the two-stage baseline on real data.
+
+### 3. Statistical tests (recomputed, `results/stat_tests.json`)
+McNemar exact p = 3.92e-57, Wilcoxon z = 14.22 — unchanged conclusions.
+
+### 4. Variant models on the harmonized split
+v0 (0.660) remains best; flickr-bank, hard-β and multi-source variants re-scored.
+
+### 5. Figures regenerated (font 13px, self-excluded data, L_w in Fig.1).
